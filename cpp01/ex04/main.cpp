@@ -26,12 +26,12 @@ void	replace_string(const std::string &filename, const std::string &s1, const st
 		found = line.find(s1);
 		while (found != std::string::npos)
 		{
-			found = line.find(s1);
 			if (found != std::string::npos)
 			{
 				line.erase(found, s1.length());
 				line.insert(found, s2);
 			}
+			found = line.find(s1);
 		}
 		out << line << std::endl;
 	}
