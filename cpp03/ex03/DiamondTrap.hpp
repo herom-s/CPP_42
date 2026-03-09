@@ -27,6 +27,7 @@ public:
 	~DiamondTrap();
 	
 	void	whoAmI();
+	using	ScavTrap::attack;
 private:
 	std::string	_name;
 };

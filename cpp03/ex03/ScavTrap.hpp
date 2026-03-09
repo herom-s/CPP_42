@@ -24,6 +24,7 @@ public:
 	ScavTrap &operator=(const ScavTrap &);
 	~ScavTrap();
 
+	void	attack(const std::string& target);
 	void	setGuard(bool value);
 	bool	getGuard(void) const;
 	void	guardGate();

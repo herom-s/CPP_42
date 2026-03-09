@@ -56,6 +56,19 @@ ScavTrap::~ScavTrap()
 	std::cout << "Destructor ScavTrap called for " + _name << std::endl;
 }
 
+void	ScavTrap::attack(const std::string& target)
+{
+	if (_hit_points == 0)
+		return ;
+	if (_energy_points == 0)
+	{
+		std::cout << _name + " has no energy to peform a scav attack!" << std::endl;
+        return ;
+	}
+	std::cout << _name + " use scav attack on " + target + ", causing " <<  _attack_dmg << " points of damage!" << std::endl;
+	_energy_points = (_energy_points - 1);
+}
+
 void	ScavTrap::setGuard(bool value)
 {
 	this->_guard = value;
