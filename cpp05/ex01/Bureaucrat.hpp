@@ -6,13 +6,14 @@
 /*   By: hermarti </var/spool/mail/hermarti>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 14:26:54 by hermarti          #+#    #+#             */
-/*   Updated: 2026/06/11 13:24:09 by hermarti         ###   ########.fr       */
+/*   Updated: 2026/06/11 13:29:17 by hermarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
-
+#include "Form.h"
+#include "Form.hpp"
 #include <exception>
 #include <ostream>
 #include <string>
@@ -29,8 +30,9 @@ public:
 	const std::string		&getName() const;
 	void					incrementGrade();
 	void					decrementGrade();
+	void					signForm(Form &form);
 
-	class			GradeTooHighException: public std::exception {
+	class					GradeTooHighException: public std::exception {
 		public:
 			GradeTooHighException(const std::string &message = "grade too high"): _message(message) {}
 			~GradeTooHighException() throw() {};
@@ -38,7 +40,7 @@ public:
 		private:
 			std::string	_message;
 	};
-	class			GradeTooLowException: public std::exception {
+	class					GradeTooLowException: public std::exception {
 		public:
 			GradeTooLowException(const std::string &message = "grade too low"): _message(message) {}
 			~GradeTooLowException() throw() {};
