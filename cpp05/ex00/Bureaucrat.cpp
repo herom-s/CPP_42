@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hermarti </var/spool/mail/hermarti>        +#+  +:+       +#+        */
+/*   By: hermarti <hermarti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/02 16:15:46 by hermarti          #+#    #+#             */
-/*   Updated: 2026/06/08 17:42:10 by hermarti         ###   ########.fr       */
+/*   Created: 2026/06/15 12:10:16 by hermarti          #+#    #+#             */
+/*   Updated: 2026/06/15 12:10:18 by hermarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
