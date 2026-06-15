@@ -18,7 +18,7 @@
 
 PresidentialPardonForm::PresidentialPardonForm(): AForm("Unknow PresidentialPardonForm", 25, 5), _target("Unknow") {}
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string &target): AForm(target + "_RobotomyRequestForm", 25, 5), _target(target) {}
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target): AForm(target + "_PresidentialPardonForm", 25, 5), _target(target) {}
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other): AForm(other), _target(other._target)
 {
