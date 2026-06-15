@@ -6,7 +6,7 @@
 /*   By: hermarti <hermarti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 12:10:52 by hermarti          #+#    #+#             */
-/*   Updated: 2026/06/15 12:10:53 by hermarti         ###   ########.fr       */
+/*   Updated: 2026/06/15 14:58:23 by hermarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,11 @@ void	Bureaucrat::signForm(Form &form)
 	form.beSigned(*this);
 }
 
-std::ostream	&operator<<(std::ostream &os, const Bureaucrat &bureaucrat)
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat)
 {
-	os << bureaucrat.getName() << ", bureaucrat grade " << static_cast<unsigned>(bureaucrat.getGrade()) << ".";
-	return os;
+    unsigned grade = static_cast<unsigned>(bureaucrat.getGrade());
+
+    os << "\n[Bureaucrat] " << bureaucrat.getName() << "\n"
+       << " | Grade  : "   << grade << " / 150"    << "\n";
+    return os;
 }
