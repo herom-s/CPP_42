@@ -17,12 +17,13 @@
 
 class ScalarConverter {
 public:
+	static void	convert(const std::string val);
+
+private:
 	ScalarConverter();
 	ScalarConverter(const ScalarConverter &);
 	ScalarConverter &operator=(const ScalarConverter &);
 	~ScalarConverter();
-
-	static void	convert(const std::string val);
 };
 
 #endif
