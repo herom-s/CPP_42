@@ -6,8 +6,11 @@
 /*   By: hermarti <hermarti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 14:36:57 by hermarti          #+#    #+#             */
-/*   Updated: 2026/07/02 14:53:20 by hermarti         ###   ########.fr       */
+/*   Updated: 2026/07/02 16:12:26 by hermarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ARRAY_HPP
+#define ARRAY_HPP
 #include "Array.tpp"
+#endif
