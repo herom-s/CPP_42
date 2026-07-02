@@ -6,7 +6,7 @@
 /*   By: hermarti <hermarti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 12:17:22 by hermarti          #+#    #+#             */
-/*   Updated: 2026/07/02 16:13:02 by hermarti         ###   ########.fr       */
+/*   Updated: 2026/07/02 16:17:39 by hermarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ Array<T> &Array<T>::operator=(const Array<T> &other) {
 			this->_a = tmp;
 			this->_size = other._size;
 	}
-	std::copy(other._a, other._a + other._size, this->_a);
+	for (unsigned int i = 0; i < other._size; i++)
+		this->_a[i] = other._a[i];
 	return *this;
 }
 
