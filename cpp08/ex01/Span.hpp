@@ -1,9 +1,9 @@
 #ifndef SPAN_HPP
 #define SPAN_HPP
 
+#include <stdexcept>
 #include <vector>
 
-//TODO: Add constructor that can add mutiple elements and make longest/shortestSpan use interators
 class   Span{
     public:
 	Span();
@@ -12,11 +12,19 @@ class   Span{
 	Span &operator=(const Span &);
 	~Span();
     void addNumber(int val);
-    int shortestSpan() const;
-    int longestSpan() const;
+    template <typename InputIterator>
+    void addRange(InputIterator first, InputIterator last)
+    {
+        std::size_t count = static_cast<std::size_t>(std::distance(first, last));
+        if (this->_arr.size() + count > this->_maxSize)
+            throw std::runtime_error("Span::addRange: not enough room left in Span");
+        this->_arr.insert(this->_arr.end(), first, last);
+    }
+    std::size_t shortestSpan() const;
+    std::size_t longestSpan() const;
     
     private:
     std::vector<int> _arr;
-    unsigned int     _size;
+    unsigned int     _maxSize;
 };
 #endif
