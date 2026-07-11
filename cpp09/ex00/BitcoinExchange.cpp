@@ -86,12 +86,15 @@ void	BitcoinExchange::processDataLine(const std::string &line) {
     std::string val_str  = line.substr(pos + 1);
 	val_str.erase(remove_if(val_str.begin(), val_str.end(), ::isspace), val_str.end());
 
-	float val;
-	std::istringstream iss(val_str);
-	if (!(iss >> val)) {
-		std::cerr << "Error: bad input => " << line << std::endl;
-		return;
-	}
+    float	val;
+	char	*end;
+
+    errno = 0;
+	val = std::strtof(val_str.c_str(), &end);
+	if (*end || errno) {
+        std::cerr << "Error: bad input => " << line << std::endl;
+        return;
+    }
 	try {
 		addExchange(date_str, val);
 	} catch (std::exception &e) {
@@ -116,9 +119,12 @@ void	BitcoinExchange::processInputLine(const std::string &line) {
         return;
     }
 
-    float val;
-    std::istringstream iss(val_str);
-    if (!(iss >> val)) {
+    float	val;
+	char	*end;
+
+    errno = 0;
+	val = std::strtof(val_str.c_str(), &end);
+	if (*end || errno) {
         std::cerr << "Error: bad input => " << line << std::endl;
         return;
     }
