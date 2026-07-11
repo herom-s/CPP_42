@@ -287,7 +287,6 @@ void PmergeMe::addDequeNumbers(int argc, char *argv[]) {
 }
 
 void PmergeMe::processAndSort(int argc, char *argv[]) {
-	printBefore(argc, argv);
 
 	std::clock_t startVec = std::clock();
 	addVectorNumbers(argc, argv);
@@ -303,6 +302,7 @@ void PmergeMe::processAndSort(int argc, char *argv[]) {
 
 	double timeDeque = static_cast<double>(endDeque - startDeque) / CLOCKS_PER_SEC * 1000000.0;
 
+	printBefore(argc, argv);
 	printAfter();
 	std::cout << "Time to process a range of " << this->_vecNumbers.size() 
 		<< " elements with std::vector : " << std::fixed << std::setprecision(0) 
